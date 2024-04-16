@@ -7,15 +7,23 @@ import inputUserName from './ui/inputUserName'
 import sendMoney from './ui/sendMoney'
 import manageForm from './ui/manageForm'
 import memberForm from './ui/memberForm'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 // Stateの配列への追加
 let nextId = 0;
+const navigation = {
+  tailwindcssPlayground:{ href: '/pages/tailwindcssPlayground' },
+}
+
 
 export default function Home() {
   let [isShowing, setIsShowing] = useState(true)
   let [, , resetIsShowing] = useTimeoutFn(() => setIsShowing(true), 500)
   const [count,setCount] =useState(0)
   const [activeIndex, setActiveIndex] = useState(0)
+  const router = useRouter()
+
   function Panel(props: {title: string, children: string,isActive: boolean,onshow: any}){
     return(
       <section className='panel rounded border-red'>
@@ -36,6 +44,15 @@ export default function Home() {
   const [artists, setArtists] = useState([{id:0,name:''}]);
   return (
     <div className='flex flex-col items-center'>
+      
+      {/* //////////////// */}
+      <button
+      className='bg-white text-black'
+      onClick={(e)=>router.push(navigation.tailwindcssPlayground.href)}
+      >
+        tailwindcssPlayground
+      </button>
+      {/* ////////// */}
       <p className='p-2'>管理可能なフォーム</p>
       <div>
         {manageForm({})}
