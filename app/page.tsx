@@ -13,10 +13,9 @@ import { useRouter } from 'next/navigation'
 // Stateの配列への追加
 let nextId = 0;
 const navigation = {
+  grid:{ href: '/pages/Grid'},
   tailwindcssPlayground:{ href: '/pages/tailwindcssPlayground' },
 }
-
-
 export default function Home() {
   let [isShowing, setIsShowing] = useState(true)
   let [, , resetIsShowing] = useTimeoutFn(() => setIsShowing(true), 500)
@@ -44,7 +43,13 @@ export default function Home() {
   const [artists, setArtists] = useState([{id:0,name:''}]);
   return (
     <div className='flex flex-col items-center'>
-      
+            {/* //////////////// */}
+            <button
+      className='bg-white text-black'
+      onClick={(e)=>router.push(navigation.grid.href)}
+      >
+        Grid
+      </button>
       {/* //////////////// */}
       <button
       className='bg-white text-black'

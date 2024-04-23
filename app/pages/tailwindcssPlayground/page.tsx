@@ -12,6 +12,5 @@ export default function TailwindcssPlayground() {
             <h5 className='text-base font-bold'>動画は16:9を使用する。</h5>
             <iframe className="w-full aspect-[16/9] ..." src="https://www.youtube.com/watch?v=e3IPNAg9IVE"></iframe>
         </div>
-
     )
 }
