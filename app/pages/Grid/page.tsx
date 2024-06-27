@@ -1,5 +1,5 @@
 import { projectsData } from '../../data/projectData';
-import ProjectSingle from '../../ui/projectSingle';
+import ProjectSingle from '../../components/ProjectSingle';
 export default function Grid() {
     return(
         <div className='container mx-auto'>

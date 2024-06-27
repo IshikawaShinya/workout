@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import memberForm  from './memberForm'
+import memberForm  from './MemberForm'
 
 export default function manageForm(props: {}) {
     const [numberForm,setNumberForm] =useState([false])

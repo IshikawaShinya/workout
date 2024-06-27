@@ -6,15 +6,7 @@ const imageStyle = { maxWidth: '100%', height: 'auto' };
 
 export default function ProjectSingle(props) {
 	return (
-		// <motion.div
-		// 	initial={{ opacity: 0 }}
-		// 	animate={{ opacity: 1}}
-		// 	transition={{
-		// 		ease: 'easeInOut',
-		// 		duration: 0.7,
-		// 		delay: 0.15,
-		// 	}}
-		// >
+
         <div>
 			<Link
 				href="/projects/[id]"

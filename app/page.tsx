@@ -2,13 +2,15 @@
 import { Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import { useTimeoutFn } from 'react-use'
-import clickCount from './ui/clickCount' 
-import inputUserName from './ui/inputUserName'
-import sendMoney from './ui/sendMoney'
-import manageForm from './ui/manageForm'
-import memberForm from './ui/memberForm'
+import clickCount from './components/ClickCount' 
+import inputUserName from './components/InputUserName'
+import sendMoney from './components/SendMoney'
+import manageForm from './components/ManageForm'
+import memberForm from './components/MemberForm'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { resolve } from 'path'
+import PushChangeImage from './components/PushChangeImage'
 
 // Stateの配列への追加
 let nextId = 0;
@@ -16,12 +18,15 @@ const navigation = {
   grid:{ href: '/pages/Grid'},
   tailwindcssPlayground:{ href: '/pages/tailwindcssPlayground' },
 }
+
+
 export default function Home() {
   let [isShowing, setIsShowing] = useState(true)
   let [, , resetIsShowing] = useTimeoutFn(() => setIsShowing(true), 500)
   const [count,setCount] =useState(0)
   const [activeIndex, setActiveIndex] = useState(0)
   const router = useRouter()
+  const [asyncImage, setAsyncImage] = useState("./nodejs_original_wordmark_logo_icon.png")
 
   function Panel(props: {title: string, children: string,isActive: boolean,onshow: any}){
     return(
@@ -43,10 +48,15 @@ export default function Home() {
   const [artists, setArtists] = useState([{id:0,name:''}]);
   return (
     <div className='flex flex-col items-center'>
-            {/* //////////////// */}
-            <button
+      {/* //////////////// */}
+      <div className='p-4'></div>
+      <div>
+        <PushChangeImage asyncImage={asyncImage} setAsyncImage={setAsyncImage}/>
+      </div>
+      {/* //////////////// */}
+      <button
       className='bg-white text-black'
-      onClick={(e)=>router.push(navigation.grid.href)}
+      onClick = {(e) => router.push(navigation.grid.href)}
       >
         Grid
       </button>
@@ -109,14 +119,14 @@ export default function Home() {
         isActive={activeIndex === 0}
         onshow={()=>setActiveIndex(0)}
         >
-        With a population of about 2 million, Almaty is Kazakhstan's largest city. 
+        With a population of about 2 million, Almaty is Kazakhstan&apos;s largest city. 
         </Panel>
         <Panel 
         title='Etymology'
         isActive={activeIndex === 1}
         onshow={()=>setActiveIndex(1)}
         >
-        The name comes from алма, the Kazakh word for "apple"
+        The name comes from алма, the Kazakh word for &quot;apple&quot;
         </Panel>
       </div>
       {/*  */}
@@ -139,7 +149,7 @@ export default function Home() {
           <img src="/next.svg" alt="ChitChat Logo" className='self-center w-5 rounded-full mx-1'></img>
           <span>Krmar </span>
         </span>
-        keeps telling me there is no way to make it work, that he has run the numbers on every possible approach, but I just have to believe there's a way to make it work, there's simply too much opportunity here.
+        keeps telling me there is no way to make it work, that he has run the numbers on every possible approach, but I just have to believe there&apos;s a way to make it work, there&apos;s simply too much opportunity here.
         </p>
       </div>
       <div className='flex mx-auto'>

@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from '../../ui/icon'
+import Icon from '../../components/Icon'
 import Image from 'next/image'
 export default function TailwindcssPlayground() {
     return(
