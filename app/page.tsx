@@ -18,8 +18,8 @@ const navigation = {
   grid:{ href: '/pages/Grid'},
   tailwindcssPlayground:{ href: '/pages/tailwindcssPlayground' },
 }
-
-
+const x :number = 2^53
+console.log(x)
 export default function Home() {
   let [isShowing, setIsShowing] = useState(true)
   let [, , resetIsShowing] = useTimeoutFn(() => setIsShowing(true), 500)
@@ -43,13 +43,15 @@ export default function Home() {
       </section>
     )
   }
+  
   // Stateの配列への追加
   const [name, setName] = useState('');
-  const [artists, setArtists] = useState([{id:0,name:''}]);
+  const [artists, setArtists] = useState([{id:0, name:''}]);
   return (
     <div className='flex flex-col items-center'>
       {/* //////////////// */}
       <div className='p-4'></div>
+      <p className='p-2 text-white bg-black'>学習項目:async/awaitとコンポーネントへのstateの渡し方</p>
       <div>
         <PushChangeImage asyncImage={asyncImage} setAsyncImage={setAsyncImage}/>
       </div>
@@ -68,16 +70,14 @@ export default function Home() {
         tailwindcssPlayground
       </button>
       {/* ////////// */}
-      <p className='p-2'>管理可能なフォーム</p>
+      <p className='p-2  text-white bg-black'>管理可能なフォーム</p>
       <div>
         {manageForm({})}
       </div>
-      <p className='p-1'>manage State</p>
-      <p className='p-4'>フリースペース</p>
       {/*  */}
       {/* Stateの配列への追加 */}
       <div className='rounded border-white w-50'>
-        <p className='p-4'>Stateの配列への追加</p>
+        <p className='p-4 text-white bg-black'>Stateの配列への追加</p>
         <input
         value={name}
         onChange={(e) => setName(e.target.value)}
