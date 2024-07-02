@@ -18,8 +18,14 @@ const navigation = {
   grid:{ href: '/pages/Grid'},
   tailwindcssPlayground:{ href: '/pages/tailwindcssPlayground' },
 }
-const x :number = 2^53
-console.log(x)
+const foo = { a: 1, b: 2, c: 3 };
+for (const prop in foo) {
+  console.log(prop,foo[prop]);
+  
+  // a 1
+  // b 2
+  // c 3 の順で出力される
+}
 export default function Home() {
   let [isShowing, setIsShowing] = useState(true)
   let [, , resetIsShowing] = useTimeoutFn(() => setIsShowing(true), 500)
