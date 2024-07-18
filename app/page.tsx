@@ -17,6 +17,7 @@ let nextId = 0;
 const navigation = {
   grid:{ href: '/pages/Grid'},
   tailwindcssPlayground:{ href: '/pages/tailwindcssPlayground' },
+  Board: {href: '/pages/Board'},
 }
 const foo = { a: 1, b: 2, c: 3 };
 for (const prop in foo) {
@@ -57,18 +58,32 @@ export default function Home() {
     <div className='flex flex-col items-center'>
       {/* //////////////// */}
       <div className='p-4'></div>
+      <p className='p-2 text-white bg-black'>掲示板サイト</p>
+      <div className=''>
+        <button
+        className='bg-white text-black'
+        onClick={(e)=>router.push(navigation.Board.href)}
+        >
+          リンク
+        </button>
+      </div>
+      <div className='p-4'></div>
       <p className='p-2 text-white bg-black'>学習項目:async/awaitとコンポーネントへのstateの渡し方</p>
       <div>
         <PushChangeImage asyncImage={asyncImage} setAsyncImage={setAsyncImage}/>
       </div>
       {/* //////////////// */}
+      <div className='p-4'></div>
+      <p className='p-2 text-white bg-black'>Grid</p>
       <button
       className='bg-white text-black'
       onClick = {(e) => router.push(navigation.grid.href)}
       >
-        Grid
+        リンク
       </button>
       {/* //////////////// */}
+      <div className='p-4'></div>
+      <p className='p-2 text-white bg-black'>tailwindcssPlayground</p>
       <button
       className='bg-white text-black'
       onClick={(e)=>router.push(navigation.tailwindcssPlayground.href)}
