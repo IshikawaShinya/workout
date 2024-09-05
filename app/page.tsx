@@ -19,14 +19,8 @@ const navigation = {
   tailwindcssPlayground:{ href: '/pages/tailwindcssPlayground' },
   Board: {href: '/pages/Board'},
 }
-const foo = { a: 1, b: 2, c: 3 };
-for (const prop in foo) {
-  console.log(prop,foo[prop]);
-  
-  // a 1
-  // b 2
-  // c 3 の順で出力される
-}
+
+
 export default function Home() {
   let [isShowing, setIsShowing] = useState(true)
   let [, , resetIsShowing] = useTimeoutFn(() => setIsShowing(true), 500)

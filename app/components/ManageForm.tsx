@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import memberForm  from './MemberForm'
 
-export default function manageForm(props: {}) {
+export default function ManageForm(props: {}) {
     const [numberForm,setNumberForm] =useState([false])
     const[inputdisabled,setInputdisabled] = useState(false)
     // const [inputdisabled2,setInputdisabled2] = useState([false])
@@ -42,7 +42,7 @@ export default function manageForm(props: {}) {
 
             <ul>
                 {numberForm.map((value,index)=>(
-                    <li>
+                    <li key = {index}>
                         <div>
                             <button
                             className = 'rounded bg-white h-5 w-10 text-black'
